@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>货币战争：策略模拟</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div id="setup-modal">
+        <div class="modal-content">
+            <div class="modal-title">投资意向书</div>
+            
+            <div class="input-group">
+                <label>初始注册资金</label>
+                <input type="number" id="init-gold-input" class="gold-input" value="50">
+            </div>
+
+            <div class="env-options">
+                <div class="env-card" id="card-bull" onclick="uiSelectEnv('bull')">
+                    <div style="font-size:30px">📈</div>
+                    <div>长线利好</div>
+                </div>
+                <div class="env-card" id="card-rotation" onclick="uiSelectEnv('rotation')">
+                    <div style="font-size:30px">🔄</div>
+                    <div>轮岗</div>
+                </div>
+            </div>
+
+            <button class="btn-start" onclick="uiSwitchToGame()">签署协议</button>
+        </div>
+    </div>
+
+    <div id="game-interface">
+        
+        <div class="header-ui">
+            <div class="gold-display">
+                <span style="margin-right:10px">💰</span>
+                <span id="gold-display-text">0</span>
+            </div>
+            <div id="env-badge" style="background:#238636; padding:5px 10px; border-radius:4px; font-size:12px;">
+                等待环境载入...
+            </div>
+        </div>
+
+        <div class="bench-area" id="bench-container">
+            <div class="bench-row" id="bench-row-1"></div>
+            <div class="bench-row" id="bench-row-2"></div>
+        </div>
+
+        <div class="shop-container">
+            <button id="btn-combat">出战</button> 
+            
+            <div class="controls">
+                <div id="level-display"></div> 
+                
+                <button class="btn-refresh" id="btn-refresh">刷新</button>
+                <div style="margin-top:10px; color:#8b949e" id="refresh-cost-text">消耗 --</div>
+            </div>
+            
+            <div class="card-list" id="shop-cards">
+                </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
